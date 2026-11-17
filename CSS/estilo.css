@@ -1,0 +1,298 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(180deg, #071b16, #12432d, #071b16);
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* CABEÇALHO */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding: 25px;
+    background: rgba(0,0,0,0.2);
+}
+
+.logo {
+    width: 100px;
+    background: white;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+header h1 {
+    color: #f5d779;
+    font-size: 38px;
+    animation: brilho 2s infinite alternate;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+/* LUZES */
+
+.luzes {
+    display: flex;
+    justify-content: space-around;
+    padding: 12px;
+    border-top: 2px solid #d5bd72;
+    border-bottom: 2px solid #d5bd72;
+}
+
+.luzes span {
+    font-size: 23px;
+    animation: piscar 1s infinite alternate;
+}
+
+.luzes span:nth-child(odd) {
+    color: #ff4040;
+}
+
+.luzes span:nth-child(even) {
+    color: #f5d779;
+    animation-delay: 0.5s;
+}
+
+
+/* PAPAI NOEL */
+
+
+.papai-noel {
+    position: absolute;
+    top: 170px;
+    left: -350px;
+    z-index: 3;
+    animation: voar 15s linear infinite;
+}
+
+.papai-noel img {
+    width: 330px;
+    height: auto;
+}
+
+/* VOO DO PAPAI NOEL */
+
+@keyframes voar {
+    0% {
+        left: -350px;
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-45px) rotate(3deg);
+    }
+
+    100% {
+        left: 110%;
+        transform: translateY(0) rotate(-5deg);
+    }
+}
+
+/* PRESENTES */
+
+.presente {
+    position: absolute;
+    font-size: 40px;
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+.presente1 {
+    top: 35%;
+    left: 12%;
+}
+
+.presente2 {
+    top: 55%;
+    right: 12%;
+    animation-delay: 1s;
+}
+
+.presente3 {
+    top: 75%;
+    left: 18%;
+    animation-delay: 2s;
+}
+
+.presente4 {
+    top: 38%;
+    right: 20%;
+    animation-delay: 0.5s;
+}
+
+/* MENSAGEM */
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 55vh;
+    padding: 25px;
+}
+
+.mensagem {
+    text-align: center;
+    max-width: 650px;
+    padding: 35px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid #d5bd72;
+    border-radius: 20px;
+    animation: aparecer 2s ease;
+    z-index: 2;
+}
+
+.mensagem h2 {
+    color: #f5d779;
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+.mensagem p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.mensagem h3 {
+    color: #f5d779;
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+/* NEVE */
+
+.neve {
+    position: fixed;
+    top: -30px;
+    color: white;
+    font-size: 22px;
+    animation: cair 7s linear infinite;
+    z-index: 1;
+}
+
+.neve:nth-of-type(1) {
+    left: 5%;
+    animation-duration: 5s;
+}
+
+.neve:nth-of-type(2) {
+    left: 20%;
+    animation-duration: 8s;
+}
+
+.neve:nth-of-type(3) {
+    left: 35%;
+    animation-duration: 6s;
+}
+
+.neve:nth-of-type(4) {
+    left: 50%;
+    animation-duration: 9s;
+}
+
+.neve:nth-of-type(5) {
+    left: 65%;
+    animation-duration: 5s;
+}
+
+.neve:nth-of-type(6) {
+    left: 80%;
+    animation-duration: 7s;
+}
+
+.neve:nth-of-type(7) {
+    left: 95%;
+    animation-duration: 6s;
+}
+
+/* RODAPÉ */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #f5d779;
+    font-size: 14px;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes voar {
+    from {
+        left: -180px;
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-50px);
+    }
+
+    to {
+        left: 110%;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0) rotate(-10deg);
+    }
+
+    50% {
+        transform: translateY(-35px) rotate(10deg);
+    }
+}
+
+@keyframes cair {
+    from {
+        transform: translateY(-30px);
+    }
+
+    to {
+        transform: translateY(110vh);
+    }
+}
+
+@keyframes brilho {
+    from {
+        text-shadow: 0 0 5px #f5d779;
+    }
+
+    to {
+        text-shadow: 0 0 25px #f5d779;
+    }
+}
+
+@keyframes piscar {
+    from {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
